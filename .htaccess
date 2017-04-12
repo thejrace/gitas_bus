@@ -1,0 +1,48 @@
+# Yönlendirmeleri aktif eder
+RewriteEngine on
+ 
+php_value post_max_size 200MB
+php_value upload_max_filesize 200MB
+
+RewriteRule ^MalzemeDuzenle/(.*)$ malzeme_duzenle.php?mid=$1  [QSA,L]
+RewriteRule ^MalzemeEkle$ malzeme_ekle.php  [QSA,L]
+RewriteRule ^MalzemeTipiEkle$ malzeme_tipi_ekle.php  [QSA,L]
+
+
+RewriteRule ^OtobusDuzenle/(.*)$ otobus_duzenle.php?oid=$1  [QSA,L]
+RewriteRule ^OtobusEkle$ otobus_ekle.php  [QSA,L]
+RewriteRule ^Otobusler$ otobusler.php  [QSA,L]
+
+RewriteRule ^OtobusMarkaDuzenle/(.*)$ otobus_marka_duzenle.php?mid=$1  [QSA,L]
+RewriteRule ^OtobusMarkaEkle$ otobus_marka_ekle.php  [QSA,L]
+RewriteRule ^OtobusMarkalar$ otobus_markalar.php  [QSA,L]
+
+RewriteRule ^OtobusModelDuzenle/(.*)$ otobus_model_duzenle.php?moid=$1  [QSA,L]
+RewriteRule ^OtobusModelEkle/(.*)$ otobus_model_ekle.php?mid=$1   [QSA,L]
+RewriteRule ^OtobusModeller/(.*)$ otobus_modeller.php?mid=$1  [QSA,L]
+
+RewriteRule ^OtobusParcaGecmisi/(.*)$ parca_gecmisi.php?oid=$1  [QSA,L]
+RewriteRule ^OtobusParcaKaydiEkle/(.*)$ parca_kaydi_ekle.php?oid=$1  [QSA,L]
+
+RewriteRule ^Stok$ stok.php  [QSA,L]
+
+RewriteRule ^OtobusYakitGecmisi/(.*)$ yakit_gecmisi.php?oid=$1  [QSA,L]
+RewriteRule ^OtobusYakitKaydiEkle/(.*)$ yakit_kaydi_ekle.php?oid=$1  [QSA,L]
+RewriteRule ^OtobusYakitKaydiDuzenle/(.*)$ yakit_kaydi_duzenle.php?kid=$1  [QSA,L]
+
+RewriteRule ^OtobusHatDuzenle/(.*)$ otobus_hat_duzenle.php?hid=$1  [QSA,L]
+RewriteRule ^OtobusHatEkle$ otobus_hat_ekle.php?oid=$1  [QSA,L]
+RewriteRule ^OtobusHatlar$ otobus_hatlar.php  [QSA,L]
+
+
+RewriteRule ^HatDuraklar/(.*)$ otobus_hat_duraklar.php?hid=$1  [QSA,L]
+RewriteRule ^HatGuzergah/(.*)$ otobus_hat_guzergah.php?hid=$1  [QSA,L]
+
+RewriteRule ^OtobusFiloPlan/(.*)$ otobus_filo_plan.php?oid=$1  [QSA,L]
+RewriteRule ^OtobusCokluFiloPlan$ otobus_coklu_filo_plan.php  [QSA,L]
+RewriteRule ^OtobusSeferIstatistikleri/(.*)$ otobus_sefer_istatistikleri.php?kapi_kodu=$1  [QSA,L]
+RewriteRule ^OtobusHaritaTakip/(.*)/(.*)$ otobus_harita_takip.php?kk=$1&orer_id=$2  [QSA,L]
+
+RewriteRule ^Giris$ login.php  [QSA,L]
+RewriteRule ^Ayarlar$ ayarlar.php  [QSA,L]
+RewriteRule ^CikisYap$ logout.php  [QSA,L]
